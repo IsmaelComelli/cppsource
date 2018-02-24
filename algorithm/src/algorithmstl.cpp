@@ -1,3 +1,9 @@
+/* 
+*  Algoritimos da STL
+*
+*  Ismael Comelli
+*/
+
 #include <iostream>
 #include <string>
 #include <vector>
