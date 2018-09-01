@@ -1,39 +1,26 @@
-#include <stdio.h>
-#include <pthread.h>
-#include <stdlib.h>
+#include <iostream>
+#include <thread>
+#include <chrono>
 
-void * thread_sum(void * llArg)
-	{
-	long long limit = *(long long *)llArg;
-	printf("thread_sum arg: %lld\n", limit);
+bool bFinish = false;
 
-	//return of the thread
-	pthread_exit(NULL);
-	}
-
+void funcThread()
+    {
+    while (!bFinish)
+        {
+        std::cout << "Working..." << std::endl;
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        }
+    }
 
 int main(int argc, char **argv)
-	{
-	if (argc < 2)
-		{
-		printf("Usage: %s <num> \n", argv[0]);
-		exit(-1);
-		}
+    {
+    std::thread T1 (funcThread);
 
-	long long limit = atoll(argv[1]);
+    std::cin.get();
+    bFinish = true;
+    
+    T1.join();
 
-	printf("Argumento: %d\n", argc);
-	printf("Argumento: %lld\n", limit);
-
-	//Create thread id
-	pthread_t tId;
-	//Create thread attributes
-	pthread_attr_t attr;
-	//Initialize thread
-	pthread_attr_init(&attr);
-	//Create and join thread
-	pthread_create(&tId, &attr, thread_sum, &limit);
-	pthread_join(tId, NULL);
-
-	return 0;
-	}
+    return 0;
+    }
