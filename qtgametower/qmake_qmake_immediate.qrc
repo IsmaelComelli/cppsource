@@ -1,0 +1,5 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource prefix="/">
+<file alias="resources/res.rc">/home/comelli/projects/cppsource/qtgametower/resources/res.rc</file>
+</qresource>
+</RCC>

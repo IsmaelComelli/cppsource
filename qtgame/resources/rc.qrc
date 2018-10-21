@@ -1,8 +1,0 @@
-<!DOCTYPE RCC><RCC version="1.0">
-<qresource>
-    <file>images/bullet.png</file>
-    <file>images/bg.png</file>
-    <file>sounds/bullet.mp3</file>
-    <file>sounds/bg.wav</file>
-</qresource>
-</RCC>
