@@ -51,19 +51,23 @@ int main()
 	{
 	//Cria vetor
 	vector<person> friends;
+
 	//Insere elementos no final do vetor
 	friends.push_back(person("Ralph", 35));
 	friends.push_back(person("Tom",   25));
 	friends.push_back(person("Frank", 17));
 	friends.push_back(person("Sally", 26));
+
 	//Ordena pelo operador <
 	sort(friends.begin(), friends.end());
 	cout << "Sorted by name:" << endl;
 	for_each(friends.begin(), friends.end(), display);
+
 	//Ordena pela funcao compare_ages
 	sort(friends.begin(), friends.end(), compare_ages);
 	cout << "Sorted by Age:" << endl;
 	for_each(friends.begin(), friends.end(), display);
+
 	//Embaralha os elementos do vetor
 	random_shuffle(friends.begin(), friends.end());
 	cout << "Ramdomly shuffled:" << endl;
